@@ -1,0 +1,264 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 2rem; /* adds space around the entire page */
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto; /* centers content */
+  padding: 1rem;  /* additional padding inside main content */
+}
+.smiski-card, .series-card {
+  padding: 1rem;   /* adds space inside each card */
+  border-radius: 1rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Homepage background */
+.home-page {
+  background: #fffaf2;
+}
+
+/* backgrounds per series */
+.series1-bg {
+  background: #d4e0c4;
+}
+.series2-bg {
+  background: #e6f7ff;
+}
+.series3-bg {
+  background: #fff0f6;
+}
+.series4-bg {
+  background: #fffaf2;
+}
+.bath-bg {
+  background: #d0f0c0;
+}
+.toilet-bg {
+  background: #f0e68c;
+}
+.living-bg {
+  background: #ffebcd;
+}
+.bed-bg {
+  background: #ffe4e1;
+}
+.yoga-bg {
+  background: #e0ffff;
+}
+.cheer-bg {
+  background: #fffacd;
+}
+.museum-bg {
+  background: #f5f5dc;
+}
+.work-bg {
+  background: #d3d3d3;
+}
+.dressing-bg {
+  background: #ffe4b5;
+}
+.exercising-bg {
+  background: #faf0e6;
+}
+.moving-bg {
+  background: #f0fff0;
+}
+.hippers-bg {
+  background: #f0f8ff;
+}
+.sunday-bg {
+  background: #fff0f5;
+}
+.birthday-bg {
+  background: #ffe6f0;
+}
+
+
+h1 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.series-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* now 4 per row */
+  gap: 1.5rem;
+}
+
+@media (max-width: 1000px) {
+  .series-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .series-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.series-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
+}
+
+.series-card:hover {
+  transform: scale(1.03);
+}
+
+/* Image wrapper allows title overlap */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.series-card img {
+  width: 100%;
+  height: auto;        /* shows full image without cropping */
+  object-fit: contain; /* keep original aspect ratio */
+  display: block;
+}
+
+/* Title overlapping image */
+.series-title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  margin: 0;
+}
+
+/* Card content below image */
+.series-card-content {
+  padding: 1rem;
+  text-align: center;
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  border-radius: 10px;
+  height: 10px;
+  margin: 10px 0;
+}
+
+.progress-fill {
+  background: #8be28b;
+  height: 10px;
+  border-radius: 10px;
+  width: 0%;
+  transition: width 0.4s;
+}
+
+.smiski-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .smiski-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .smiski-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .smiski-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.smiski-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.smiski-card:hover {
+  transform: scale(1.05); /* gentle zoom */
+}
+
+.smiski-card img {
+  width: 100%;           /* fills the card width */
+  height: 180px;         /* same height as series cover on homepage */
+  object-fit: contain;   /* shows full image without cropping */
+  margin-bottom: 10px;
+}
+
+.back-btn {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 20px solid #2e5a3e; /* triangle color */
+  margin-bottom: 1rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.back-btn:hover {
+  border-right-color: #4CAF50;      /* hover color */
+}
+
+#search {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 80%;
+  max-width: 400px;
+  margin: 10px auto 20px;
+  display: block; 
+}
+
+.clear-btn {
+  background: #f5a3a3;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#clear-btn {
+  display: block;           /* ensures it behaves like a block element */
+  margin-left: auto;        /* pushes it to the right */
+  margin-bottom: 15px;      /* keeps spacing below */
+}
+
+.clear-btn:hover {
+  background: #f57c7c;
+}
+
+.smiski-card.collected {
+  background-color: #d4f0d4; /* light green for collected */
+}
