@@ -1,6 +1,5 @@
  const smiskiData = {
   "Series 1": {
-    colorClass: "series1-bg",
     cover: "images/Series_1/peeking.PNG",
     figures: [
       { name: "Hugging Knees", img: "images/Series_1/hugging_knees.PNG"},
@@ -16,7 +15,6 @@
     ],
   },
   "Series 2": {
-    colorClass: "series2-bg",
     cover: "images/Series_2/pushing.PNG",
     figures: [
       { name: "Kneeling", img: "images/Series_2/kneeling.PNG" },
@@ -28,7 +26,6 @@
     ],
   },
   "Series 3": {
-    colorClass: "series3-bg",
     cover: "images/Series_3/handstand.PNG",
     figures: [
       { name: "Bridge", img: "images/Series_3/bridge.PNG" },
@@ -40,7 +37,6 @@
     ],
   },
   "Series 4": {
-    colorClass: "series4-bg",
     cover: "images/Series_4/sneaking.PNG",
     figures: [
       { name: "Sneaking", img: "images/Series_4/sneaking.PNG"},
@@ -52,7 +48,6 @@
     ],
   },
   "Bath Series": {
-    colorClass: "bath-bg",
     cover: "images/bath series/shampooing.PNG",
     figures: [
       { name: "Shampooing", img: "images/bath series/shampooing.PNG"},
@@ -64,7 +59,6 @@
     ],
   },
   "Toilet Series": {
-    colorClass: "toilet-bg",
     cover: "images/toilet series/squatting.PNG",
     figures: [
       { name: "Peek-A-Boo", img: "images/toilet series/peek-a-boo.PNG"},
@@ -76,7 +70,6 @@
     ],
   },
   "Living Series": {
-    colorClass: "living-bg",
     cover: "images/living series/daydreaming.PNG" ,
     figures: [
       { name: "Daydreaming", img: "images/living series/daydreaming.PNG"},
@@ -88,7 +81,6 @@
     ],
   },
   "Bed Series": {
-    colorClass: "bed-bg",
     cover: "images/bed series/before-rest.PNG",
     figures: [
       { name: "Before Rest", img: "images/bed series/before-rest.PNG"},
@@ -100,7 +92,6 @@
     ],
   },
   "Yoga Series": {
-    colorClass: "yoga-bg",
     cover: "images/yoga series/lotus-pose.PNG",
     figures: [
       { name: "Lotus Pose", img: "images/yoga series/lotus-pose.PNG"},
@@ -112,7 +103,6 @@
     ],
   },
   "Cheer Series": {
-    colorClass: "cheer-bg",
     cover: "images/cheer series/dancing.PNG",
     figures: [
       { name: "Marching", img: "images/cheer series/marching.PNG"},
@@ -124,7 +114,6 @@
     ],
   },
   "Museum Series": {
-    colorClass: "museum-bg",
     cover: "images/museum series/pearl-earring.PNG",
     figures: [
       { name: "The Source", img: "images/museum series/the-source.PNG"},
@@ -136,7 +125,6 @@
     ],
   },
   "@ Work Series": {
-    colorClass: "work-bg",
     cover: "images/@ work series/researching.PNG",
     figures: [
       { name: "Approving", img: "images/@ work series/approving.PNG"},
@@ -148,7 +136,6 @@
     ],
   },
   "Dressing Series": {
-    colorClass: "dressing-bg",
     cover: "images/dressing series/sweater.PNG",
     figures: [
       { name: "Underpants", img: "images/dressing series/underpants.PNG"},
@@ -160,7 +147,6 @@
     ],
   },
   "Exercising Series": {
-    colorClass: "exercising-bg",
     cover: "images/exercising series/hoop.PNG",
     figures: [
       { name: "Doing Crunches", img: "images/exercising series/doing-crunches.PNG"},
@@ -172,7 +158,6 @@
     ],
   },
   "Moving Series": {
-    colorClass: "moving-bg",
     cover: "images/moving series/balancing-boxes.PNG",
     figures: [
       { name: "Carrying Ladder", img: "images/moving series/carrying-ladder.PNG"},
@@ -184,7 +169,6 @@
     ],
   },
   "Hippers Series": {
-    colorClass: "hippers-bg",
     cover: "images/hippers series/looking-out.PNG",
     figures: [
       { name: "On His Smartphone", img: "images/hippers series/on-his-smartphone.PNG"},
@@ -196,7 +180,6 @@
     ],
   },
   "Sunday Series": {
-    colorClass: "sunday-bg",
     cover: "images/sunday series/paper-airplane.PNG",
     figures: [
       { name: "Blowing Bubbles", img: "images/sunday series/blowing-bubbles.PNG"},
@@ -208,10 +191,9 @@
     ],
   },
   "Birthday Series": {
-    colorClass: "birthday-bg",
     cover: "images/birthday series/birthday-message.PNG",
     figures: [
-      { name: "Giving a Bouquet", img: "images/birthday series/giving-a-bouquet.PNG"},
+      { name: "Giving a Bouquet", img: "images/birthday series/giving-bouquet.PNG"},
       { name: "Wrapped Up", img: "images/birthday series/wrapped-up.PNG"},
       { name: "Popping Confetti", img: "images/birthday series/popping-confetti.PNG"},
       { name: "Birthday Message", img: "images/birthday series/birthday-message.PNG"},
@@ -221,44 +203,100 @@
   },
 };
 
-// Homepage logic
-if (document.title.includes("Tracker")) {
+// ---------------- Homepage Logic ----------------
+if (document.body.classList.contains("home-page")) {
   const container = document.getElementById("series-container");
   const search = document.getElementById("search");
+  const clearAllBtn = document.getElementById("clear-all-btn");
 
+  // Render series cards
   function renderSeries(filter = "") {
     container.innerHTML = "";
 
     Object.entries(smiskiData)
-      .filter(([seriesName]) => seriesName.toLowerCase().includes(filter.toLowerCase()))
+      .filter(([seriesName]) =>
+        seriesName.toLowerCase().includes(filter.toLowerCase())
+      )
       .forEach(([seriesName, seriesData]) => {
         const collected = JSON.parse(localStorage.getItem(seriesName)) || [];
-        const percent = Math.round((collected.length / seriesData.figures.length) * 100);
+        const total = seriesData.figures.length;
+        const percent = Math.round((collected.length / total) * 100);
 
-        // Create series card
+        // Wrapper for card + tracker
+        const wrapper = document.createElement("div");
+        wrapper.className = "series-wrapper";
+
+        // Series card (links to series page)
         const card = document.createElement("a");
         card.href = `series.html?name=${encodeURIComponent(seriesName)}`;
         card.className = "series-card";
         card.innerHTML = `
-          <img src="${seriesData.cover}" alt="${seriesName}">
-          <h2>${seriesName}</h2>
-          <div class="progress-bar"><div class="progress-fill" style="width:${percent}%"></div></div>
-          <p>${collected.length}/${seriesData.figures.length} collected</p>
+          <div class="image-wrapper">
+            <img src="${seriesData.cover}" alt="${seriesName}">
+            <h2 class="series-title">${seriesName}</h2>
+          </div>
         `;
 
-        container.appendChild(card);
+        // Tracker (progress bar + count)
+        const tracker = document.createElement("div");
+        tracker.className = "series-tracker";
+        tracker.innerHTML = `
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:${percent}%"></div>
+          </div>
+          <span class="progress-count">${collected.length}/${total}</span>
+        `;
+
+        wrapper.appendChild(card);
+        wrapper.appendChild(tracker);
+        container.appendChild(wrapper);
       });
+
+    updateOverallProgress(); // Update overall tracker after rendering
   }
 
+  // Overall progress tracker
+  function updateOverallProgress() {
+    let totalCollected = 0;
+    let totalFigures = 0;
+
+    Object.entries(smiskiData).forEach(([seriesName, seriesData]) => {
+      const collected = JSON.parse(localStorage.getItem(seriesName)) || [];
+      totalCollected += collected.length;
+      totalFigures += seriesData.figures.length;
+    });
+
+    const percent = totalFigures > 0 ? Math.round((totalCollected / totalFigures) * 100) : 0;
+    const overallProgress = document.getElementById("overall-progress");
+
+    if (overallProgress) {
+      overallProgress.querySelector(".progress-fill").style.width = percent + "%";
+      overallProgress.querySelector(".progress-count").textContent = `${totalCollected}/${totalFigures}`;
+    }
+  }
+
+  // Initial render
   renderSeries();
 
+  // Search filter
   search.addEventListener("input", (e) => {
     renderSeries(e.target.value);
   });
+
+  // Clear all button
+  clearAllBtn.addEventListener("click", () => {
+    if (confirm("Are you sure you want to clear ALL collected Smiskis?")) {
+      Object.keys(localStorage).forEach(key => {
+        if (smiskiData[key]) localStorage.removeItem(key);
+      });
+      renderSeries();           // re-render the series cards
+      updateOverallProgress();  // update the overall tracker
+    }
+  });
 }
 
-// Series page logic
-if (document.title.includes("Series")) {
+// ---------------- Series Page Logic ----------------
+if (document.body.classList.contains("series-page")) {
   const params = new URLSearchParams(window.location.search);
   const seriesName = params.get("name");
   const title = document.getElementById("series-title");
@@ -268,11 +306,11 @@ if (document.title.includes("Series")) {
   const series = smiskiData[seriesName];
   let collected = JSON.parse(localStorage.getItem(seriesName)) || [];
 
-  document.body.classList.add(series.colorClass);
   title.textContent = seriesName;
 
   function renderFigures() {
     container.innerHTML = "";
+
     series.figures.forEach(f => {
       const isCollected = collected.includes(f.name);
 
@@ -281,18 +319,22 @@ if (document.title.includes("Series")) {
       if (isCollected) card.classList.add("collected");
 
       card.innerHTML = `
+        <label class="checkbox-wrapper">
+          <input type="checkbox" ${isCollected ? "checked" : ""}>
+          <span class="checkmark"></span>
+        </label>
         <img src="${f.img}" alt="${f.name}">
         <p>${f.name}</p>
       `;
 
-      // Entire card clickable
-      card.addEventListener("click", () => {
-        if (collected.includes(f.name)) {
+      const checkbox = card.querySelector("input[type='checkbox']");
+      checkbox.addEventListener("change", () => {
+        if (checkbox.checked) {
+          if (!collected.includes(f.name)) collected.push(f.name);
+          card.classList.add("collected");
+        } else {
           collected = collected.filter(n => n !== f.name);
           card.classList.remove("collected");
-        } else {
-          collected.push(f.name);
-          card.classList.add("collected");
         }
         localStorage.setItem(seriesName, JSON.stringify(collected));
       });
