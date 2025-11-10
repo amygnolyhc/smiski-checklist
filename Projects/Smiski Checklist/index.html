@@ -5,14 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smiski Collection Tracker</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body class="home-page">
-  <h1>Smiski Collection Checklist</h1>
 
-  <input type="text" id="search" placeholder="Search Series..." />
+<body id="home-page" class="home-page">
+  <h1>SMISKI CHECKLIST</h1>
+
+  <div class="search-bar">
+    <button id="clear-all-btn" class="clear-btn">Clear All Selections</button>
+    <input type="text" id="search" placeholder="Search Series..." />
+  </div>
+
+  <h2>Overall Progress</h2>
+
+<div id="overall-progress" class="series-tracker overall-progress">
+  <div class="progress-bar">
+    <div class="progress-fill" style="width: 0%;"></div>
+  </div>
+  <span class="progress-count">0/0</span>
+</div>
 
   <div id="series-container" class="series-grid"></div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
