@@ -232,10 +232,6 @@ h1 {
   padding: 8px 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  width: 80%;
-  max-width: 400px;
-  margin: 10px auto 20px;
-  display: block; 
 }
 
 .clear-btn {
