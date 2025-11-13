@@ -170,14 +170,9 @@ h1 {
   align-items: left;       /* vertically aligns input + button */
   gap: 10px;                 /* space between search and button */
   margin: 20px auto 30px;    /* spacing above and below */
+  font-family: "Baloo Bhaijaan 2"; 
 }
 
-#search {
-  flex: 0 1 300px;           /* keeps search bar at a reasonable width */
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
 
 .clear-btn {
   background-color: transparent;
@@ -218,10 +213,12 @@ h1 {
 #search {
   flex: 0 1 400px;
   padding: 10px 14px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  border-radius: 140px;
+  border: none;
+  color: #2B361C;
   font-size: 16px;
   text-align: center;
+  font-family: "Baloo Bhaijaan 2";
 }
 
 /* Clear All button on far right, with same horizontal padding */
@@ -314,7 +311,7 @@ h1 {
   width: 40px;
   height: 40px;
   background-color: #ffe;
-  border: 2px solid #2B361C;
+  border: 3px solid #2B361C;
   border-radius: 4px;
   display: inline-block;
   position: relative;
