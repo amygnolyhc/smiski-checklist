@@ -73,7 +73,7 @@ main {
 
 #clear-all-btn {
   position: relative;
-  margin-left: 20px; 
+  margin-left: 20px;
   background-color: #E4FFC9;
   border: 3px solid #2B361C;
   color: #2B361C;
@@ -333,4 +333,3 @@ main {
   font-size: 0.9rem;
   color: #2B361C;
 }
-
