@@ -8,7 +8,7 @@
       { name: "Lounging", img: "images/Series_1/lounging.PNG" },
       { name: "Hiding", img: "images/Series_1/hiding.PNG" },
       { name: "Peeking", img: "images/Series_1/peeking.PNG" },
-      { name: "Little Smiski Lifting", img: "images/Series_1/peeking.PNG"},
+      { name: "Little Smiski Lifting", img: "ps://www.smiski.com/assets/img/series/living/sleeping.png"},
       { name: "Little Smiski Peeking", img: "ps://www.smiski.com/assets/img/series/living/sleeping.png" },
       { name: "Little Smiski Hugging", img: "ps://www.smiski.com/assets/img/series/living/secret.png" },
       { name: "Secret Scream", img: "ps://www.smiski.com/assets/img/series/living/secret.png" },
