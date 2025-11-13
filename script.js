@@ -94,7 +94,7 @@
   "Yoga Series": {
     cover: "yoga series/lotus-pose.PNG",
     figures: [
-      { name: "Lotus Pose", img: "yoga series/lotus-pose.PNG"},
+      { name: "Lotus Pose", img: "Yoga Series/lotus-pose.PNG"},
       { name: "Twist Pose", img: "yoga series/twist-pose.PNG"},
       { name: "Spinal Twist", img: "yoga series/spinal-twist.PNG"},
       { name: "Triangle Pose", img: "yoga series/triangle-pose.PNG"},
@@ -354,3 +354,4 @@ if (document.body.classList.contains("series-page")) {
   });
 
 }
+
