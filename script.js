@@ -47,7 +47,7 @@ const smiskiData = {
       { name: "Defeated", img: "Series_4/defeated.PNG" },
     ],
   },
-  "Bath_Series": {
+  "Bath Series": {
     cover: "Bath_Series/shampooing.PNG",
     figures: [
       { name: "Shampooing", img: "Bath_Series/shampooing.PNG" },
@@ -58,7 +58,7 @@ const smiskiData = {
       { name: "Looking", img: "Bath_Series/looking.PNG" },
     ],
   },
-  "Toilet_Series": {
+  "Toilet Series": {
     cover: "Toilet_Series/squatting.PNG",
     figures: [
       { name: "Peek-A-Boo", img: "Toilet_Series/peek-a-boo.PNG" },
@@ -69,7 +69,7 @@ const smiskiData = {
       { name: "Holding In", img: "Toilet_Series/holding-in.PNG" },
     ],
   },
-  "Living_Series": {
+  "Living Series": {
     cover: "Living_Series/daydreaming.PNG",
     figures: [
       { name: "Daydreaming", img: "Living_Series/daydreaming.PNG" },
@@ -80,7 +80,7 @@ const smiskiData = {
       { name: "Lifting", img: "Living_Series/lifting.PNG" },
     ],
   },
-  "Bed_Series": {
+  "Bed Series": {
     cover: "Bed_Series/before-rest.PNG",
     figures: [
       { name: "Before Rest", img: "Bed_Series/before-rest.PNG" },
@@ -91,7 +91,7 @@ const smiskiData = {
       { name: "Crying", img: "Bed_Series/crying.PNG" },
     ],
   },
-  "Yoga_Series": {
+  "Yoga Series": {
     cover: "Yoga_Series/lotus-pose.PNG",
     figures: [
       { name: "Lotus Pose", img: "Yoga_Series/lotus-pose.PNG" },
@@ -102,7 +102,7 @@ const smiskiData = {
       { name: "Ship Pose", img: "Yoga_Series/ship-pose.PNG" },
     ],
   },
-  "Cheer_Series": {
+  "Cheer Series": {
     cover: "Cheer_Series/dancing.PNG",
     figures: [
       { name: "Marching", img: "Cheer_Series/marching.PNG" },
@@ -113,7 +113,7 @@ const smiskiData = {
       { name: "Cheering", img: "Cheer_Series/cheering.PNG" },
     ],
   },
-  "Museum_Series": {
+  "Museum Series": {
     cover: "Museum_Series/pearl-earring.PNG",
     figures: [
       { name: "The Source", img: "Museum_Series/the-source.PNG" },
@@ -124,7 +124,7 @@ const smiskiData = {
       { name: "Pearl Earring", img: "Museum_Series/pearl-earring.PNG" },
     ],
   },
-  "@_Work_Series": {
+  "@ Work Series": {
     cover: "@_Work_Series/researching.PNG",
     figures: [
       { name: "Approving", img: "@_Work_Series/approving.PNG" },
@@ -135,7 +135,7 @@ const smiskiData = {
       { name: "Little Group Think", img: "@_Work_Series/little-group-think.PNG" },
     ],
   },
-  "Dressing_Series": {
+  "Dressing Series": {
     cover: "Dressing_Series/sweater.PNG",
     figures: [
       { name: "Underpants", img: "Dressing_Series/underpants.PNG" },
@@ -146,7 +146,7 @@ const smiskiData = {
       { name: "Tight Pants", img: "Dressing_Series/tight-pants.PNG" },
     ],
   },
-  "Exercising_Series": {
+  "Exercising Series": {
     cover: "Exercising_Series/hoop.PNG",
     figures: [
       { name: "Doing Crunches", img: "Exercising_Series/doing-crunches.PNG" },
@@ -157,7 +157,7 @@ const smiskiData = {
       { name: "Stretch", img: "Exercising_Series/stretch.PNG" },
     ],
   },
-  "Moving_Series": {
+  "Moving Series": {
     cover: "Moving_Series/balancing-boxes.PNG",
     figures: [
       { name: "Carrying Ladder", img: "Moving_Series/carrying-ladder.PNG" },
@@ -168,7 +168,7 @@ const smiskiData = {
       { name: "Falling Down", img: "Moving_Series/falling-down.PNG" },
     ],
   },
-  "Hippers_Series": {
+  "Hippers Series": {
     cover: "Hippers_Series/looking-out.PNG",
     figures: [
       { name: "On His Smartphone", img: "Hippers_Series/on-his-smartphone.PNG" },
@@ -179,7 +179,7 @@ const smiskiData = {
       { name: "Upside Down", img: "Hippers_Series/upside-down.PNG" },
     ],
   },
-  "Sunday_Series": {
+  "Sunday Series": {
     cover: "Sunday_Series/paper-airplane.PNG",
     figures: [
       { name: "Blowing Bubbles", img: "Sunday_Series/blowing-bubbles.PNG" },
@@ -190,7 +190,7 @@ const smiskiData = {
       { name: "Gardening", img: "Sunday_Series/gardening.PNG" },
     ],
   },
-  "Birthday_Series": {
+  "Birthday Series": {
     cover: "Birthday_Series/birthday-message.PNG",
     figures: [
       { name: "Giving a Bouquet", img: "Birthday_Series/giving-bouquet.PNG" },
@@ -354,6 +354,7 @@ if (document.body.classList.contains("series-page")) {
   });
 
 }
+
 
 
 
